@@ -40,38 +40,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Preview
-@Composable
-fun TimesTable() {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.White)
-    ) {
-        for (i in 1 until 10) {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f)
-            ) {
-                for (j in 1 until 10) {
-                    val color = when ((i + j) % 2) {
-                        0 -> Color.Blue
-                        1 -> Color.White
-                        else -> Color.Cyan
-                    }
-                    Box(
-                        modifier = Modifier
-                            .fillMaxHeight()
-                            .weight(1f)
-                            .background(color)
-                            .border(BorderStroke(1.dp, Color.LightGray))
-                    ) {
-                        Text("${i * j}", modifier = Modifier.align(Alignment.Center))
-                    }
-                }
-            }
-        }
-    }
-}
